@@ -6,8 +6,7 @@ function() {
   }
   var config = {
     env: env,
-    reportConfigPath1=C:\Users\pks059\newworkspace\karatedemo\src\test\java\configs\ extent-config.xml
-  }
+    }
   if (env == 'dev') {
     // customize
     // e.g. config.foo = 'bar';
