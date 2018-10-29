@@ -1,0 +1,122 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Header xmlns:v1="http://services.apmoller.net/DB-IPT-R/v1" xmlns:v4="http://services.apmoller.net/AMM/v4" xmlns:v2="http://services.apmoller.net/ManagementFramework/CommonIdentifier/v2">
+      <v1:CommonIdentifierResponse xmlns:v1="http://services.apmoller.net/ManagementFramework/CommonIdentifier/v2">
+         <v1:ApplicationResponder>
+            <v1:TransactionID>BALCC0303</v1:TransactionID>
+            <v1:StatusCode>1</v1:StatusCode>
+         </v1:ApplicationResponder>
+      </v1:CommonIdentifierResponse>
+   </soapenv:Header>
+   <soapenv:Body xmlns:v4="http://services.apmoller.net/AMM/v4" xmlns:v2="http://services.apmoller.net/ManagementFramework/CommonIdentifier/v2">
+      <v4:ValidateShipmentOnYieldResponse>
+         <v4:ClientReference>EntityId="BALCC0303",ProfileId="",RequestId="RIDRK3BNPD3LZ9KB",SequenceNumber="",SequenceTime="2018-07-13 13.14.08.261271",ServiceName="",SubEntityId="",UserId=""</v4:ClientReference>
+         <v4:CommitmentWeek>201841</v4:CommitmentWeek>
+         <v4:Shipment>
+            <v4:ShipmentId>BALCC0303</v4:ShipmentId>
+            <v4:ShipmentRoute>
+               <v4:ShipmentRouteLink>
+                  <v4:Arrival>
+                     <v4:Vessel>
+                        <v4:VesselCode>
+                           <v4:AlternativeCodeVal>8HF</v4:AlternativeCodeVal>
+                        </v4:VesselCode>
+                     </v4:Vessel>
+                     <v4:VoyageCd>1810</v4:VoyageCd>
+                  </v4:Arrival>
+                  <v4:End>
+                     <v4:Site>
+                        <v4:SiteCode>
+                           <v4:AlternativeCodeVal>EGDAMPT</v4:AlternativeCodeVal>
+                        </v4:SiteCode>
+                     </v4:Site>
+                  </v4:End>
+                  <v4:Start>
+                     <v4:Site>
+                        <v4:SiteCode>
+                           <v4:AlternativeCodeVal>INJHTGT</v4:AlternativeCodeVal>
+                        </v4:SiteCode>
+                     </v4:Site>
+                  </v4:Start>
+               </v4:ShipmentRouteLink>
+               <v4:ShipmentRouteRole>
+                  <v4:RouteRoleType>
+                     <v4:RouteRoleTypeCd>O</v4:RouteRoleTypeCd>
+                  </v4:RouteRoleType>
+               </v4:ShipmentRouteRole>
+            </v4:ShipmentRoute>
+            <v4:ShipmentRoute>
+               <v4:ShipmentRouteLink>
+                  <v4:Arrival>
+                     <v4:Vessel>
+                        <v4:VesselCode>
+                           <v4:AlternativeCodeVal>8HF</v4:AlternativeCodeVal>
+                        </v4:VesselCode>
+                     </v4:Vessel>
+                     <v4:VoyageCd>1810</v4:VoyageCd>
+                  </v4:Arrival>
+                  <v4:End>
+                     <v4:Site>
+                        <v4:SiteCode>
+                           <v4:AlternativeCodeVal>EGDAMPT</v4:AlternativeCodeVal>
+                        </v4:SiteCode>
+                     </v4:Site>
+                  </v4:End>
+                  <v4:Start>
+                     <v4:Site>
+                        <v4:SiteCode>
+                           <v4:AlternativeCodeVal>INJHTGT</v4:AlternativeCodeVal>
+                        </v4:SiteCode>
+                     </v4:Site>
+                  </v4:Start>
+               </v4:ShipmentRouteLink>
+               <v4:ShipmentRouteRole>
+                  <v4:RouteRoleType>
+                     <v4:RouteRoleTypeCd>P</v4:RouteRoleTypeCd>
+                  </v4:RouteRoleType>
+               </v4:ShipmentRouteRole>
+            </v4:ShipmentRoute>
+         </v4:Shipment>
+         <v4:ValidationDetails>
+            <v4:Commitment>
+               <v4:CommitmentId>100011704</v4:CommitmentId>
+               <v4:CommitmentTypeInd>Regular</v4:CommitmentTypeInd>
+               <v4:IsConcernCode>false</v4:IsConcernCode>
+               <v4:RegularCommitment>
+                  <v4:ConsumedFFEWeek>0.0</v4:ConsumedFFEWeek>
+                  <v4:FFE>13</v4:FFE>
+                  <v4:UnusedFFE>12.0</v4:UnusedFFE>
+               </v4:RegularCommitment>
+               <v4:ValidFromDttm>201838</v4:ValidFromDttm>
+               <v4:ValidToDttm>201851</v4:ValidToDttm>
+            </v4:Commitment>
+            <v4:CommitmentStatus>Committed</v4:CommitmentStatus>
+            <v4:ValidationPerEquipment>
+               <v4:CommitmentConsumptionId>1415997</v4:CommitmentConsumptionId>
+               <v4:EquipmentSizeType>40 DRY</v4:EquipmentSizeType>
+               <v4:EquipmentCount>1</v4:EquipmentCount>
+               <v4:FFEConsumption>1.0</v4:FFEConsumption>
+               <v4:FFENotConsumed>0</v4:FFENotConsumed>
+               <v4:RateType>Current</v4:RateType>
+               <v4:EquipmentTypeUptakeAcceptanceCode>A</v4:EquipmentTypeUptakeAcceptanceCode>
+               <v4:EquipmentTypeUptakeAcceptanceDescription>ACCEPT</v4:EquipmentTypeUptakeAcceptanceDescription>
+               <v4:EquipmentTypeValidationOutcomeCode>FC</v4:EquipmentTypeValidationOutcomeCode>
+               <v4:EquipmentTypeValidationOutcomeDescription>Fully Committed</v4:EquipmentTypeValidationOutcomeDescription>
+            </v4:ValidationPerEquipment>
+            <v4:TotalFFEConsumed>1.0</v4:TotalFFEConsumed>
+            <v4:TotalFFENotConsumed>0</v4:TotalFFENotConsumed>
+            <v4:CommitmentUptakeAcceptanceCode>A</v4:CommitmentUptakeAcceptanceCode>
+            <v4:CommitmentUptakeAcceptanceDescription>ACCEPT</v4:CommitmentUptakeAcceptanceDescription>
+            <v4:CommitmentValidationOutcomeCode>FC</v4:CommitmentValidationOutcomeCode>
+            <v4:CommitmentValidationOutcomeDescription>Fully Committed</v4:CommitmentValidationOutcomeDescription>
+         </v4:ValidationDetails>
+         <v4:ShipmentUptakeAcceptanceCode>A</v4:ShipmentUptakeAcceptanceCode>
+         <v4:ShipmentUptakeAcceptanceDescription>Accept</v4:ShipmentUptakeAcceptanceDescription>
+         <v4:ShipmentValidationOutcomeCode>FC</v4:ShipmentValidationOutcomeCode>
+         <v4:ShipmentValidationOutcomeDescription>Fully Committed</v4:ShipmentValidationOutcomeDescription>
+         <v4:SteeredLegMessage>Operational Route:Success: Steered leg successfully determined Product Route:Success: Steered leg successfully determined</v4:SteeredLegMessage>
+         <v4:SteeredLegStatusCode>1000</v4:SteeredLegStatusCode>
+         <v4:Message>Success: Yield Validation successfully completed</v4:Message>
+         <v4:StatusCode>1000</v4:StatusCode>
+      </v4:ValidateShipmentOnYieldResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

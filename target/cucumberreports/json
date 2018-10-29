@@ -1,0 +1,185 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 843727786,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "url \u0027http://osb.int.esb.apmoller.net:9200/YieldManagementV3/ValidateShipmentOnYield\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027http://osb.int.esb.apmoller.net:9200/YieldManagementV3/ValidateShipmentOnYield\u0027",
+                  "offset": 4
+                }
+              ],
+              "location": "StepDefs.url(String)"
+            },
+            "keyword": "* "
+          }
+        ]
+      },
+      {
+        "line": 6,
+        "name": "soap 1.1",
+        "description": "",
+        "id": "yvd-service-response-validation-using-karate;soap-1.1",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 47559607,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "request read(\u0027/sample/YVD Request- 40 DRY 1 Equipment.xml\u0027)",
+            "match": {
+              "arguments": [
+                {
+                  "val": "read(\u0027/sample/YVD Request- 40 DRY 1 Equipment.xml\u0027)",
+                  "offset": 8
+                }
+              ],
+              "location": "StepDefs.request(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 254195448346,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "method post",
+            "match": {
+              "arguments": [
+                {
+                  "val": "post",
+                  "offset": 7
+                }
+              ],
+              "location": "StepDefs.method(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 757774,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "status 200",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 7
+                }
+              ],
+              "location": "StepDefs.status(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 24055197,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "print \u0027response: \u0027, response",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027response: \u0027, response",
+                  "offset": 6
+                }
+              ],
+              "location": "StepDefs.print(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16990863,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "def resp \u003d response/Envelope/Body/ValidateShipmentOnYieldResponse/Shipment/ShipmentId",
+            "match": {
+              "arguments": [
+                {
+                  "val": "resp",
+                  "offset": 4
+                },
+                {
+                  "val": "response/Envelope/Body/ValidateShipmentOnYieldResponse/Shipment/ShipmentId",
+                  "offset": 11
+                }
+              ],
+              "location": "StepDefs.def(String,String)"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 8244545,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "print \u0027resp:\u0027,resp",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\u0027resp:\u0027,resp",
+                  "offset": 6
+                }
+              ],
+              "location": "StepDefs.print(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 10582749,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "match resp \u003d\u003d \u0027BALCC0303\u0027",
+            "match": {
+              "arguments": [
+                {},
+                {
+                  "val": "resp",
+                  "offset": 6
+                },
+                {},
+                {
+                  "val": "\u0027BALCC0303\u0027",
+                  "offset": 14
+                }
+              ],
+              "location": "StepDefs.matchEquals(String,String,String,String)"
+            },
+            "keyword": "* "
+          }
+        ]
+      }
+    ],
+    "name": "YVD service response validation using Karate",
+    "description": "",
+    "id": "yvd-service-response-validation-using-karate",
+    "keyword": "Feature",
+    "uri": "demo/yvdDemoResponse.feature"
+  }
+]
