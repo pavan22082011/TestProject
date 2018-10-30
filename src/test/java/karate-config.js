@@ -1,17 +1,12 @@
 function() {    
-  var env = karate.env; // get system property 'karate.env'
-  karate.log('karate.env system property was:', env);
-  if (!env) {
-    env = 'dev';
-  }
+
+
+  // base config
   var config = {
-    env: env,
-    }
-  if (env == 'dev') {
-    // customize
-    // e.g. config.foo = 'bar';
-  } else if (env == 'e2e') {
-    // customize
+		  	baseUrl: 'http://osb.int.esb.apmoller.net:9200/YieldManagementV3/ValidateShipmentOnYield',
+
   }
+  
+
   return config;
 }
