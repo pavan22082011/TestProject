@@ -5,7 +5,7 @@ Background:
 
 Scenario: soap 1.1
 
-   Given request read('/sample/YVDRequest40DRY1Equipment.xml')
+   Given request read('/resources/YVDRequest40DRY1Equipment.xml')
  	
  	When soap action baseUrl
     Then status 200
