@@ -15,20 +15,20 @@ formatter.background({
 });
 formatter.step({
   "line": 4,
-  "name": "url \u0027http://osb.int.esb.apmoller.net:9200/YieldManagementV3/ValidateShipmentOnYield\u0027",
+  "name": "url baseUrl",
   "keyword": "* "
 });
 formatter.match({
   "arguments": [
     {
-      "val": "\u0027http://osb.int.esb.apmoller.net:9200/YieldManagementV3/ValidateShipmentOnYield\u0027",
+      "val": "baseUrl",
       "offset": 4
     }
   ],
   "location": "StepDefs.url(String)"
 });
 formatter.result({
-  "duration": 843727786,
+  "duration": 764023755,
   "status": "passed"
 });
 formatter.scenario({
@@ -41,12 +41,12 @@ formatter.scenario({
 });
 formatter.step({
   "line": 8,
-  "name": "request read(\u0027/sample/YVD Request- 40 DRY 1 Equipment.xml\u0027)",
+  "name": "request read(\u0027/sample/YVDRequest40DRY1Equipment.xml\u0027)",
   "keyword": "Given "
 });
 formatter.step({
   "line": 10,
-  "name": "method post",
+  "name": "soap action baseUrl",
   "keyword": "When "
 });
 formatter.step({
@@ -77,27 +77,27 @@ formatter.step({
 formatter.match({
   "arguments": [
     {
-      "val": "read(\u0027/sample/YVD Request- 40 DRY 1 Equipment.xml\u0027)",
+      "val": "read(\u0027/sample/YVDRequest40DRY1Equipment.xml\u0027)",
       "offset": 8
     }
   ],
   "location": "StepDefs.request(String)"
 });
 formatter.result({
-  "duration": 47559607,
+  "duration": 46679441,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "post",
-      "offset": 7
+      "val": " baseUrl",
+      "offset": 11
     }
   ],
-  "location": "StepDefs.method(String)"
+  "location": "StepDefs.soapAction(String)"
 });
 formatter.result({
-  "duration": 254195448346,
+  "duration": 9687205080,
   "status": "passed"
 });
 formatter.match({
@@ -110,7 +110,7 @@ formatter.match({
   "location": "StepDefs.status(int)"
 });
 formatter.result({
-  "duration": 757774,
+  "duration": 684783,
   "status": "passed"
 });
 formatter.match({
@@ -123,7 +123,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 24055197,
+  "duration": 9266775,
   "status": "passed"
 });
 formatter.match({
@@ -140,7 +140,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 16990863,
+  "duration": 11820075,
   "status": "passed"
 });
 formatter.match({
@@ -153,7 +153,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 8244545,
+  "duration": 5781509,
   "status": "passed"
 });
 formatter.match({
@@ -172,7 +172,7 @@ formatter.match({
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 10582749,
+  "duration": 5744484,
   "status": "passed"
 });
 });

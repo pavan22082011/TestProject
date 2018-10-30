@@ -1,13 +1,13 @@
 Feature: YVD service response validation using Karate
 
 Background:
-* url 'http://osb.int.esb.apmoller.net:9200/YieldManagementV3/ValidateShipmentOnYield'
+* url baseUrl
 
 Scenario: soap 1.1
 
-   Given request read('/sample/YVD Request- 40 DRY 1 Equipment.xml')
- 
-    When method post
+   Given request read('/sample/YVDRequest40DRY1Equipment.xml')
+ 	
+ 	When soap action baseUrl
     Then status 200
   	And print 'response: ', response
   	* def resp = response/Envelope/Body/ValidateShipmentOnYieldResponse/Shipment/ShipmentId
