@@ -28,7 +28,7 @@ formatter.match({
   "location": "StepDefs.url(String)"
 });
 formatter.result({
-  "duration": 764023755,
+  "duration": 845898145,
   "status": "passed"
 });
 formatter.scenario({
@@ -41,50 +41,86 @@ formatter.scenario({
 });
 formatter.step({
   "line": 8,
-  "name": "request read(\u0027/sample/YVDRequest40DRY1Equipment.xml\u0027)",
+  "name": "request read(\u0027/resources/YVDRequest40DRY1Equipment.xml\u0027)",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 10,
+  "line": 9,
   "name": "soap action baseUrl",
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
+  "line": 10,
   "name": "status 200",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 12,
+  "line": 11,
   "name": "print \u0027response: \u0027, response",
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
+  "line": 12,
   "name": "def resp \u003d response/Envelope/Body/ValidateShipmentOnYieldResponse/Shipment/ShipmentId",
   "keyword": "* "
 });
 formatter.step({
-  "line": 14,
+  "line": 13,
   "name": "print \u0027resp:\u0027,resp",
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
+  "line": 14,
   "name": "match resp \u003d\u003d \u0027BALCC0303\u0027",
+  "keyword": "* "
+});
+formatter.step({
+  "comments": [
+    {
+      "line": 16,
+      "value": "# use jdbc to validate"
+    }
+  ],
+  "line": 17,
+  "name": "def config \u003d { username: \u0027SDA241\u0027, password: \u0027Welcome@1\u0027, url: \u0027jdbc:oracle:thin:@(DESCRIPTION\u003d(ADDRESS_LIST\u003d(ADDRESS\u003d(PROTOCOL\u003dTCP)(HOST\u003dutmtest-scan.crb.apmoller.net)(PORT\u003d1521)))(CONNECT_DATA\u003d(SERVICE_NAME\u003dUTMTEST)(INSTANCE_NAME\u003dUTMTEST1)))\u0027, driverClassName: \u0027oracle.jdbc.xa.client.OracleXADataSource\u0027 }",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 18,
+  "name": "def DbUtils \u003d Java.type(\u0027resources.DbUtils\u0027)",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 19,
+  "name": "def db \u003d new DbUtils(config)",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 20,
+  "name": "print db",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 21,
+  "name": "def SHIPMENTS \u003d db.readValue(\"SELECT SHIPMENT_ID FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID \u003d\u0027\"+resp+\"\u0027 \")",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 22,
+  "name": "match SHIPMENTS \u003d\u003d \u0027BALCC0303\u0027",
   "keyword": "* "
 });
 formatter.match({
   "arguments": [
     {
-      "val": "read(\u0027/sample/YVDRequest40DRY1Equipment.xml\u0027)",
+      "val": "read(\u0027/resources/YVDRequest40DRY1Equipment.xml\u0027)",
       "offset": 8
     }
   ],
   "location": "StepDefs.request(String)"
 });
 formatter.result({
-  "duration": 46679441,
+  "duration": 50942969,
   "status": "passed"
 });
 formatter.match({
@@ -97,7 +133,7 @@ formatter.match({
   "location": "StepDefs.soapAction(String)"
 });
 formatter.result({
-  "duration": 9687205080,
+  "duration": 7334551979,
   "status": "passed"
 });
 formatter.match({
@@ -110,7 +146,7 @@ formatter.match({
   "location": "StepDefs.status(int)"
 });
 formatter.result({
-  "duration": 684783,
+  "duration": 540210,
   "status": "passed"
 });
 formatter.match({
@@ -123,7 +159,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 9266775,
+  "duration": 10857085,
   "status": "passed"
 });
 formatter.match({
@@ -140,7 +176,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 11820075,
+  "duration": 16477099,
   "status": "passed"
 });
 formatter.match({
@@ -153,7 +189,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 5781509,
+  "duration": 8385944,
   "status": "passed"
 });
 formatter.match({
@@ -172,7 +208,107 @@ formatter.match({
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 5744484,
+  "duration": 6217700,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "config",
+      "offset": 4
+    },
+    {
+      "val": "{ username: \u0027SDA241\u0027, password: \u0027Welcome@1\u0027, url: \u0027jdbc:oracle:thin:@(DESCRIPTION\u003d(ADDRESS_LIST\u003d(ADDRESS\u003d(PROTOCOL\u003dTCP)(HOST\u003dutmtest-scan.crb.apmoller.net)(PORT\u003d1521)))(CONNECT_DATA\u003d(SERVICE_NAME\u003dUTMTEST)(INSTANCE_NAME\u003dUTMTEST1)))\u0027, driverClassName: \u0027oracle.jdbc.xa.client.OracleXADataSource\u0027 }",
+      "offset": 13
+    }
+  ],
+  "location": "StepDefs.def(String,String)"
+});
+formatter.result({
+  "duration": 53501208,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "DbUtils",
+      "offset": 4
+    },
+    {
+      "val": "Java.type(\u0027resources.DbUtils\u0027)",
+      "offset": 14
+    }
+  ],
+  "location": "StepDefs.def(String,String)"
+});
+formatter.result({
+  "duration": 17110047,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "db",
+      "offset": 4
+    },
+    {
+      "val": "new DbUtils(config)",
+      "offset": 9
+    }
+  ],
+  "location": "StepDefs.def(String,String)"
+});
+formatter.result({
+  "duration": 132402847,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "db",
+      "offset": 6
+    }
+  ],
+  "location": "StepDefs.print(String)"
+});
+formatter.result({
+  "duration": 6587243,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "SHIPMENTS",
+      "offset": 4
+    },
+    {
+      "val": "db.readValue(\"SELECT SHIPMENT_ID FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID \u003d\u0027\"+resp+\"\u0027 \")",
+      "offset": 16
+    }
+  ],
+  "location": "StepDefs.def(String,String)"
+});
+formatter.result({
+  "duration": 855809863,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {},
+    {
+      "val": "SHIPMENTS",
+      "offset": 6
+    },
+    {},
+    {
+      "val": "\u0027BALCC0303\u0027",
+      "offset": 19
+    }
+  ],
+  "location": "StepDefs.matchEquals(String,String,String,String)"
+});
+formatter.result({
+  "duration": 5083683,
   "status": "passed"
 });
 });
