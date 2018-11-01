@@ -28,7 +28,7 @@ formatter.match({
   "location": "StepDefs.url(String)"
 });
 formatter.result({
-  "duration": 845898145,
+  "duration": 736608301,
   "status": "passed"
 });
 formatter.scenario({
@@ -107,7 +107,27 @@ formatter.step({
 });
 formatter.step({
   "line": 22,
-  "name": "match SHIPMENTS \u003d\u003d \u0027BALCC0303\u0027",
+  "name": "match SHIPMENTS \u003d\u003d resp",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 23,
+  "name": "def SHIPMENTS \u003d db.readRow(\"SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID \u003d\u0027\"+resp+\"\u0027 \")",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 24,
+  "name": "match SHIPMENTS.SHIPMENT_ID \u003d\u003d resp",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 25,
+  "name": "def SHIPMENTS \u003d db.readRows(\"SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION\")",
+  "keyword": "* "
+});
+formatter.step({
+  "line": 26,
+  "name": "match contains { SHIPMENTS: \u0027#(resp)\u0027 }",
   "keyword": "* "
 });
 formatter.match({
@@ -120,7 +140,7 @@ formatter.match({
   "location": "StepDefs.request(String)"
 });
 formatter.result({
-  "duration": 50942969,
+  "duration": 103772088,
   "status": "passed"
 });
 formatter.match({
@@ -133,7 +153,7 @@ formatter.match({
   "location": "StepDefs.soapAction(String)"
 });
 formatter.result({
-  "duration": 7334551979,
+  "duration": 7566680630,
   "status": "passed"
 });
 formatter.match({
@@ -146,7 +166,7 @@ formatter.match({
   "location": "StepDefs.status(int)"
 });
 formatter.result({
-  "duration": 540210,
+  "duration": 910811,
   "status": "passed"
 });
 formatter.match({
@@ -159,7 +179,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 10857085,
+  "duration": 13864205,
   "status": "passed"
 });
 formatter.match({
@@ -176,7 +196,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 16477099,
+  "duration": 26353909,
   "status": "passed"
 });
 formatter.match({
@@ -189,7 +209,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 8385944,
+  "duration": 11240733,
   "status": "passed"
 });
 formatter.match({
@@ -208,7 +228,7 @@ formatter.match({
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 6217700,
+  "duration": 10303476,
   "status": "passed"
 });
 formatter.match({
@@ -225,7 +245,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 53501208,
+  "duration": 61161818,
   "status": "passed"
 });
 formatter.match({
@@ -242,7 +262,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 17110047,
+  "duration": 11773538,
   "status": "passed"
 });
 formatter.match({
@@ -259,7 +279,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 132402847,
+  "duration": 190416145,
   "status": "passed"
 });
 formatter.match({
@@ -272,7 +292,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 6587243,
+  "duration": 13831059,
   "status": "passed"
 });
 formatter.match({
@@ -289,7 +309,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 855809863,
+  "duration": 456130886,
   "status": "passed"
 });
 formatter.match({
@@ -301,14 +321,71 @@ formatter.match({
     },
     {},
     {
-      "val": "\u0027BALCC0303\u0027",
+      "val": "resp",
       "offset": 19
     }
   ],
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 5083683,
+  "duration": 7857018,
   "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "SHIPMENTS",
+      "offset": 4
+    },
+    {
+      "val": "db.readRow(\"SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID \u003d\u0027\"+resp+\"\u0027 \")",
+      "offset": 16
+    }
+  ],
+  "location": "StepDefs.def(String,String)"
+});
+formatter.result({
+  "duration": 149487859,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {},
+    {
+      "val": "SHIPMENTS.SHIPMENT_ID",
+      "offset": 6
+    },
+    {},
+    {
+      "val": "resp",
+      "offset": 31
+    }
+  ],
+  "location": "StepDefs.matchEquals(String,String,String,String)"
+});
+formatter.result({
+  "duration": 10847213,
+  "status": "passed"
+});
+formatter.match({
+  "arguments": [
+    {
+      "val": "SHIPMENTS",
+      "offset": 4
+    },
+    {
+      "val": "db.readRows(\"SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION\")",
+      "offset": 16
+    }
+  ],
+  "location": "StepDefs.def(String,String)"
+});
+formatter.result({
+  "duration": 610105447,
+  "status": "passed"
+});
+formatter.match({});
+formatter.result({
+  "status": "undefined"
 });
 });

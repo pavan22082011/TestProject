@@ -19,6 +19,10 @@ Given request read('/resources/YVDRequest40DRY1Equipment.xml')
 * def db = new DbUtils(config)
 * print db
 * def SHIPMENTS = db.readValue("SELECT SHIPMENT_ID FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID ='"+resp+"' ")
-* match SHIPMENTS == 'BALCC0303'
+* match SHIPMENTS == resp
+* def SHIPMENTS = db.readRow("SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID ='"+resp+"' ")
+* match SHIPMENTS.SHIPMENT_ID == resp
+* def SHIPMENTS = db.readRows("SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION")
+* match contains { SHIPMENTS: '#(resp)' }
 
 	
