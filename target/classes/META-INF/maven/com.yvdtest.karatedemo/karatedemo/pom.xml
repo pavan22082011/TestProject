@@ -36,11 +36,17 @@
     <version>1.4.190</version>
     <scope>runtime</scope>
 	</dependency>
-<dependency>
+	<dependency>
     <groupId>com.oracle</groupId>
     <artifactId>ojdbc6</artifactId>
     <version>11.2.0.3</version>
+	</dependency>
+	<dependency>
+    <groupId>org.jvnet.hudson.plugins</groupId>
+    <artifactId>seleniumhtmlreport</artifactId>
+    <version>0.91</version>
 </dependency>
+
     </dependencies>
 
     <build>
