@@ -36,13 +36,11 @@ public class DbUtils {
     }
     
     public Object readValue(String query) {
-    	System.out.println("Query :" +query);
     	System.out.println("testing jdbc connection :" +jdbc);
     	 return jdbc.queryForObject(query, Object.class);
     }    
     
     public Map<String, Object> readRow(String query) {
-    	System.out.println("Query :" +query);
     	System.out.println("testing jdbc connection :" +jdbc);
         return jdbc.queryForMap(query);
     }
