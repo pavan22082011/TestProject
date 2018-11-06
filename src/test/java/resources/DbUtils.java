@@ -36,7 +36,7 @@ public class DbUtils {
     }
     
     public Object readValue(String query) {
-    	System.out.println("testing jdbc connection :" +jdbc);
+    	System.out.println("testing jdbc connection ggg :" +jdbc);
     	 return jdbc.queryForObject(query, Object.class);
     }    
     
