@@ -162,7 +162,7 @@ formatter.match({
   "location": "StepDefs.url(String)"
 });
 formatter.result({
-  "duration": 836660630,
+  "duration": 835890866,
   "status": "passed"
 });
 formatter.scenario({
@@ -290,7 +290,7 @@ formatter.match({
   "location": "StepDefs.request(String)"
 });
 formatter.result({
-  "duration": 57637407,
+  "duration": 57872956,
   "status": "passed"
 });
 formatter.match({
@@ -303,7 +303,7 @@ formatter.match({
   "location": "StepDefs.soapAction(String)"
 });
 formatter.result({
-  "duration": 18508786164,
+  "duration": 7441763143,
   "status": "passed"
 });
 formatter.match({
@@ -316,7 +316,7 @@ formatter.match({
   "location": "StepDefs.status(int)"
 });
 formatter.result({
-  "duration": 736265,
+  "duration": 541268,
   "status": "passed"
 });
 formatter.match({
@@ -329,7 +329,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 12281660,
+  "duration": 8921922,
   "status": "passed"
 });
 formatter.match({
@@ -346,7 +346,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 17438334,
+  "duration": 15046884,
   "status": "passed"
 });
 formatter.match({
@@ -359,7 +359,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 10372590,
+  "duration": 7093249,
   "status": "passed"
 });
 formatter.match({
@@ -378,7 +378,7 @@ formatter.match({
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 7065040,
+  "duration": 6287871,
   "status": "passed"
 });
 formatter.match({
@@ -395,7 +395,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 1899196,
+  "duration": 3885842,
   "status": "passed"
 });
 formatter.match({
@@ -414,7 +414,7 @@ formatter.match({
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 8346451,
+  "duration": 10210033,
   "status": "passed"
 });
 formatter.match({
@@ -431,7 +431,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 59980550,
+  "duration": 43787307,
   "status": "passed"
 });
 formatter.match({
@@ -448,7 +448,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 10742837,
+  "duration": 9332721,
   "status": "passed"
 });
 formatter.match({
@@ -465,7 +465,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 162959249,
+  "duration": 164516054,
   "status": "passed"
 });
 formatter.match({
@@ -478,7 +478,7 @@ formatter.match({
   "location": "StepDefs.print(String)"
 });
 formatter.result({
-  "duration": 7042825,
+  "duration": 5643287,
   "status": "passed"
 });
 formatter.match({
@@ -495,7 +495,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 908825164,
+  "duration": 540576374,
   "status": "passed"
 });
 formatter.match({
@@ -514,7 +514,7 @@ formatter.match({
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 6721943,
+  "duration": 5760708,
   "status": "passed"
 });
 formatter.match({
@@ -531,7 +531,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 135949471,
+  "duration": 265277143,
   "status": "passed"
 });
 formatter.match({
@@ -550,7 +550,7 @@ formatter.match({
   "location": "StepDefs.matchEquals(String,String,String,String)"
 });
 formatter.result({
-  "duration": 6184907,
+  "duration": 9522782,
   "status": "passed"
 });
 formatter.match({
@@ -567,7 +567,7 @@ formatter.match({
   "location": "StepDefs.def(String,String)"
 });
 formatter.result({
-  "duration": 494929011,
+  "duration": 753495495,
   "status": "passed"
 });
 formatter.match({});
