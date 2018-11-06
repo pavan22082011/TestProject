@@ -16,7 +16,7 @@ import cucumber.api.CucumberOptions;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
 
-@CucumberOptions(tags = {"~@ignore"},plugin = { "pretty", "html:test-results/cucumberreports/html/", "json:test-results/cucumberreports/cucumber.json" },
+@CucumberOptions(tags = {"~@ignore"},plugin = { "pretty", "html:target/cucumberreports/html/", "json:target/cucumber.json" },
 monochrome=true)
 @RunWith(Karate.class)
 public class ExamplesTest {
