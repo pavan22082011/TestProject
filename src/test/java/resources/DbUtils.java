@@ -23,7 +23,6 @@ public class DbUtils {
       
         String username = (String) config.get("username");
         String password = (String) config.get("password");
-        System.out.println(""+username+"--"+"passowrd--"+password);
         String driver = (String) config.get("driverClassName");
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(driver);
@@ -32,16 +31,13 @@ public class DbUtils {
         dataSource.setPassword(password);
         jdbc = new JdbcTemplate(dataSource);
         logger.info("init jdbc template: {}", url);
-        System.out.println("testing jdbc connection : \n" +jdbc + "\n");
     }
     
     public Object readValue(String query) {
-    	System.out.println("testing jdbc connection ggg :" +jdbc);
     	 return jdbc.queryForObject(query, Object.class);
     }    
     
     public Map<String, Object> readRow(String query) {
-    	System.out.println("testing jdbc connection :" +jdbc);
         return jdbc.queryForMap(query);
     }
     

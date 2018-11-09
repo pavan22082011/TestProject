@@ -2,10 +2,11 @@ Feature: YVD FC service response validation using Karate
 
 Background:
 * url baseUrl
+* def configDb = dbConfig
 
-Scenario Outline: Validate the YVD response for FC scenario
+Scenario Outline: Validate the YVD payload response with the database for FC scenario
 
-Given request read('/resources/YVDRequest40DRY1Equipment.xml')
+	Given request read('/resources/YVDRequest40DRY1Equipment.xml')
  	  When soap action baseUrl
       Then status 200
   	  And print 'response: ', response
@@ -15,25 +16,22 @@ Given request read('/resources/YVDRequest40DRY1Equipment.xml')
   	* def respValidation = response/Envelope/Body/ValidateShipmentOnYieldResponse/ValidationDetails/ValidationPerEquipment/EquipmentTypeValidationOutcomeDescription
   	* match respValidation == '<ValidationOutcome>'	
   	
-	  # use jdbc to validate
-	* def config = { username: 'SDA241', password: 'Welcome@1', url: 'jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=utmtest-scan.crb.apmoller.net)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=UTMTEST)(INSTANCE_NAME=UTMTEST1)))', driverClassName: 'oracle.jdbc.xa.client.OracleXADataSource' }
+	  # Connect to database and validate YVD payload response with database response
 	* def DbUtils = Java.type('resources.DbUtils')
-	* def db = new DbUtils(config)
-	* print db
+	* def db = new DbUtils(configDb)
 	* def SHIPMENTS1 = db.readValue("SELECT SHIPMENT_ID FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID ='"+resp+"' ")
 	* match SHIPMENTS1 == resp
 	* def SHIPMENTS2 = db.readRow("SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID ='"+resp+"' ")
 	* match SHIPMENTS2.SHIPMENT_ID == resp
-	* def SHIPMENTS3 = db.readRows("SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION")
-	* match SHIPMENTS3.SHIPMENT_ID { SHIPMENT_ID: '#(resp)'}
+
 
 	Examples:
 	| ShipmentId | ValidationOutcome |
 	| BALCC0303 | Fully Committed |
 	
-	Scenario Outline: Validate the YVD response for FC scenario
+Scenario Outline: Validate the YVD payload response with the database for FC scenario
 
-Given request read('/resources/YVDRequest40DRY1Equipment.xml')
+	Given request read('/resources/YVDRequest40DRY1Equipment.xml')
  	  When soap action baseUrl
       Then status 200
   	  And print 'response: ', response
@@ -43,17 +41,13 @@ Given request read('/resources/YVDRequest40DRY1Equipment.xml')
   	* def respValidation = response/Envelope/Body/ValidateShipmentOnYieldResponse/ValidationDetails/ValidationPerEquipment/EquipmentTypeValidationOutcomeDescription
   	* match respValidation == '<ValidationOutcome>'	
   	
-	  # use jdbc to validate
-	* def config = { username: 'SDA241', password: 'Welcome@1', url: 'jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=utmtest-scan.crb.apmoller.net)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=UTMTEST)(INSTANCE_NAME=UTMTEST1)))', driverClassName: 'oracle.jdbc.xa.client.OracleXADataSource' }
+	  # Connect to database and validate YVD payload response with database response
 	* def DbUtils = Java.type('resources.DbUtils')
-	* def db = new DbUtils(config)
-	* print db
+	* def db = new DbUtils(configDb)
 	* def SHIPMENTS1 = db.readValue("SELECT SHIPMENT_ID FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID ='"+resp+"' ")
 	* match SHIPMENTS1 == resp
 	* def SHIPMENTS2 = db.readRow("SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION C WHERE C.SHIPMENT_ID ='"+resp+"' ")
 	* match SHIPMENTS2.SHIPMENT_ID == resp
-	* def SHIPMENTS3 = db.readRows("SELECT * FROM INT_BOOK_COMM.COMMITMENT_CONSUMPTION")
-	* match SHIPMENTS3.SHIPMENT_ID { SHIPMENT_ID: '#(resp)'}
 
 	Examples:
 	| ShipmentId | ValidationOutcome |
